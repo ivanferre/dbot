@@ -1,10 +1,16 @@
 # Development Notes
 
+- [A Minimal Bot](https://discordpy.readthedocs.io/en/stable/quickstart.html) includes the right call to `discord.Client`.
+- How to pass the token to the client: <https://stackoverflow.com/questions/73440592/typeerror-expected-token-to-be-a-str-received-class-nonetype-instead>
+- [How to use dotenv package to load environment variables in Python](https://www.python-engineer.com/posts/dotenv-python/)
+
 ## Resources
 
 ### On the Project
 
 - [The Tutorial](https://www.freecodecamp.org/news/create-a-discord-bot-with-python/)
+- [The Video](https://www.youtube.com/watch?v=SPTfmiYiuok)
+- The [list of projects](https://www.freecodecamp.org/news/python-projects-for-beginners/#code-a-discord-bot-with-python-host-for-free-in-the-cloud) where I found the tutorial.
 
 ### On Python Development
 
