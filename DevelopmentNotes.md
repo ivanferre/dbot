@@ -4,6 +4,9 @@
 - How to pass the token to the client: <https://stackoverflow.com/questions/73440592/typeerror-expected-token-to-be-a-str-received-class-nonetype-instead>
 - [How to use dotenv package to load environment variables in Python](https://www.python-engineer.com/posts/dotenv-python/)
 - `Presence Intent` and `Message Content Intent` privileged intents must be authorised in <https://discord.com/developers/applications> settings
+- The `requests` module is not built-in as explained in [ImportError: No module named requests](https://stackoverflow.com/questions/17309288/importerror-no-module-named-requests). It must be imported by using the following command:
+
+    sudo apt-get install python3-requests
 
 ## Resources
 
