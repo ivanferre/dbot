@@ -10,11 +10,18 @@
 
 ## Resources
 
+### To Use
+
 These are resources to complete the project in a more interesting manner:
 
 - Use AWS instead of repl.it.
   - [Running a Python script 24/7 in Cloud FOR FREE (Amazon Web Services EC2)](https://victormerino.medium.com/running-a-python-script-24-7-in-cloud-for-free-amazon-web-services-ec2-76af166ae4fb)
   - [How To Run Your Python Scripts in Amazon EC2 Instances (Demo)](https://towardsdatascience.com/how-to-run-your-python-scripts-in-amazon-ec2-instances-demo-8e56e76a6d24)
+
+- To use databases with Python.
+  - [Do You Know Python Has A Built-In Database?](https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd)
+  - [Python MySQL](https://www.w3schools.com/python/python_mysql_getstarted.asp)
+  - [Python MongoDB](https://www.w3schools.com/python/python_mongodb_getstarted.asp)
 
 ### On the Project
 
