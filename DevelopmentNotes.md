@@ -3,6 +3,7 @@
 - [A Minimal Bot](https://discordpy.readthedocs.io/en/stable/quickstart.html) includes the right call to `discord.Client`.
 - How to pass the token to the client: <https://stackoverflow.com/questions/73440592/typeerror-expected-token-to-be-a-str-received-class-nonetype-instead>
 - [How to use dotenv package to load environment variables in Python](https://www.python-engineer.com/posts/dotenv-python/)
+- `Presence Intent` and `Message Content Intent` privileged intents must be authorised in <https://discord.com/developers/applications> settings
 
 ## Resources
 
