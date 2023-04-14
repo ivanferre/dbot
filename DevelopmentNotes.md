@@ -1,5 +1,34 @@
 # Development Notes
 
+## TODO
+
+1. Deploy the bot in AWS.
+1. CONFIG
+1. README
+1. Use database to store lists of words.
+1. $question - record somebody asked something.
+    1. Set reminder (May anybody answer {question.user}, please?)
+    1. Store $question in database.
+    1. Set reminder period in .env
+    1. $answer
+    1. Match $answer with $question -> move to #q&a channel
+    1. Clean $question from database
+
+1. TRAD:EN:DE
+1. Alternative database
+
+## Deploy in AWS
+
+Folling this procedure:<https://victormerino.medium.com/running-a-python-script-24-7-in-cloud-for-free-amazon-web-services-ec2-76af166ae4fb>
+
+The step "We can access our instance using SSH using this command" does not work.
+
+I use this to connect to the instance using ssh:<https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html>
+
+See file publicDNS.txt for instance setting details.
+
+## Solving Unexpected Crashes
+
 - [A Minimal Bot](https://discordpy.readthedocs.io/en/stable/quickstart.html) includes the right call to `discord.Client`.
 - How to pass the token to the client: <https://stackoverflow.com/questions/73440592/typeerror-expected-token-to-be-a-str-received-class-nonetype-instead>
 - [How to use dotenv package to load environment variables in Python](https://www.python-engineer.com/posts/dotenv-python/)
