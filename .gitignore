@@ -1,2 +1,4 @@
 *.env
 bot-token.env
+*.pem
+requirements.txt

@@ -3,6 +3,8 @@
 ## TODO
 
 1. Deploy the bot in AWS.
+    1. <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html> to change default user and password.
+    1. Create a non-admin user.
 1. CONFIG
 1. README
 1. Use database to store lists of words.
@@ -14,7 +16,10 @@
     1. Match $answer with $question -> move to #q&a channel
     1. Clean $question from database
 
-1. TRAD:EN:DE
+1. $meeting schedules a meeting: store it in db, publish it in #agenda channel, set reminder 30 min. ahead.
+1. $translate:LL str translates the string to language LL by calling (deepl|google) API.
+1. Increase Security against MitM attacks: [(Optional) Get the instance fingerprint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html)
+1. Store Servers where the bot is used. Keep track!
 1. Alternative database
 
 ## Deploy in AWS
