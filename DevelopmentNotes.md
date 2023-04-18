@@ -27,6 +27,10 @@ Once you're done, you may deactivate the environment.
 
 1. $meeting schedules a meeting: store it in db, publish it in #agenda channel, set reminder 30 min. ahead.
 1. $translate:LL str translates the string to language LL by calling (deepl|google) API.
+
+- [Getting Started with the DeepL Language Translation API in Python](https://thenewstack.io/getting-started-with-the-deepl-language-translation-api-in-python/)
+-[deepl-python in GitHub](https://github.com/DeepLcom/deepl-python)
+
 1. Increase Security against MitM attacks: [(Optional) Get the instance fingerprint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html)
 1. Store Servers where the bot is used. Keep track!
 1. Alternative database
