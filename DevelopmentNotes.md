@@ -89,10 +89,12 @@ These are resources to complete the project in a more interesting manner:
 - [The Tutorial](https://www.freecodecamp.org/news/create-a-discord-bot-with-python/)
 - [The Video](https://www.youtube.com/watch?v=SPTfmiYiuok)
 - The [list of projects](https://www.freecodecamp.org/news/python-projects-for-beginners/#code-a-discord-bot-with-python-host-for-free-in-the-cloud) where I found the tutorial.
+- [python-dotenv](https://pypi.org/project/python-dotenv/)
 
 ### On Python Development
 
 - [Get started using Python for web development on Windows](https://learn.microsoft.com/en-us/windows/python/web-frameworks)
+-
 
 ### Alternative Projects
 
