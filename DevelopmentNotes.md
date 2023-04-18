@@ -9,7 +9,13 @@ Once you're done, you may deactivate the environment.
 
 1. $stop command to stop [stop the instance].
   <https://aws.plainenglish.io/the-fear-of-boto3-how-to-stop-ec2-instances-using-python-f0339a8ec986>
-  
+
+Command is:
+
+  ec2.Instance('<INSTANCE-ID>').stop()
+
+Therefore, we need to get the instance name in the discord chat to be able to stop the bot. Log message uses it(?)
+
 1. Create a non-admin user in AWS.
     1. <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html> to change default user and password.
 1. CONFIG
@@ -68,11 +74,7 @@ See file publicDNS.txt for instance setting details.
 
 ### To Use
 
-These are resources to complete the project in a more interesting manner:
-
-- Use AWS instead of repl.it.
-  - [Running a Python script 24/7 in Cloud FOR FREE (Amazon Web Services EC2)](https://victormerino.medium.com/running-a-python-script-24-7-in-cloud-for-free-amazon-web-services-ec2-76af166ae4fb)
-  - [How To Run Your Python Scripts in Amazon EC2 Instances (Demo)](https://towardsdatascience.com/how-to-run-your-python-scripts-in-amazon-ec2-instances-demo-8e56e76a6d24)
+These are resources to add further features to the original project:
 
 - Stop an AWS instance.
 
@@ -90,6 +92,12 @@ These are resources to complete the project in a more interesting manner:
 - [The Video](https://www.youtube.com/watch?v=SPTfmiYiuok)
 - The [list of projects](https://www.freecodecamp.org/news/python-projects-for-beginners/#code-a-discord-bot-with-python-host-for-free-in-the-cloud) where I found the tutorial.
 - [python-dotenv](https://pypi.org/project/python-dotenv/)
+
+## Used References
+
+- Use AWS instead of repl.it.
+  - [Running a Python script 24/7 in Cloud FOR FREE (Amazon Web Services EC2)](https://victormerino.medium.com/running-a-python-script-24-7-in-cloud-for-free-amazon-web-services-ec2-76af166ae4fb)
+  - [How To Run Your Python Scripts in Amazon EC2 Instances (Demo)](https://towardsdatascience.com/how-to-run-your-python-scripts-in-amazon-ec2-instances-demo-8e56e76a6d24)
 
 ### On Python Development
 
