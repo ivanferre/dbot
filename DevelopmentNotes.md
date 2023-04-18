@@ -1,12 +1,21 @@
 # Development Notes
 
+Remember to activate the testing environment!
+Learn about Python environments.
+
+Once you're done, you may deactivate the environment.
+
 ## TODO
 
-1. Deploy the bot in AWS.
+1. $stop command to stop [stop the instance].
+  <https://aws.plainenglish.io/the-fear-of-boto3-how-to-stop-ec2-instances-using-python-f0339a8ec986>
+  
+1. Create a non-admin user in AWS.
     1. <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html> to change default user and password.
-    1. Create a non-admin user.
 1. CONFIG
+1. $help = list of bot commands
 1. README
+  Add functionality description.
 1. Use database to store lists of words.
 1. $question - record somebody asked something.
     1. Set reminder (May anybody answer {question.user}, please?)
@@ -24,7 +33,7 @@
 
 ## Deploy in AWS
 
-Folling this procedure:<https://victormerino.medium.com/running-a-python-script-24-7-in-cloud-for-free-amazon-web-services-ec2-76af166ae4fb>
+Following this procedure:<https://victormerino.medium.com/running-a-python-script-24-7-in-cloud-for-free-amazon-web-services-ec2-76af166ae4fb>
 
 The step "We can access our instance using SSH using this command" does not work.
 
@@ -42,6 +51,15 @@ See file publicDNS.txt for instance setting details.
 
     sudo apt-get install python3-requests
 
+- The discord module is not found.
+
+  sudo apt install pythonpy
+  pip install -U discord.py
+
+- No module named 'dotenv'
+
+  pip install python-dotenv
+
 ## Resources
 
 ### To Use
@@ -51,6 +69,11 @@ These are resources to complete the project in a more interesting manner:
 - Use AWS instead of repl.it.
   - [Running a Python script 24/7 in Cloud FOR FREE (Amazon Web Services EC2)](https://victormerino.medium.com/running-a-python-script-24-7-in-cloud-for-free-amazon-web-services-ec2-76af166ae4fb)
   - [How To Run Your Python Scripts in Amazon EC2 Instances (Demo)](https://towardsdatascience.com/how-to-run-your-python-scripts-in-amazon-ec2-instances-demo-8e56e76a6d24)
+
+- Stop an AWS instance.
+
+  - <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html>
+  - <https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/stop-instances.html>
 
 - To use databases with Python.
   - [Do You Know Python Has A Built-In Database?](https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd)
