@@ -7,6 +7,9 @@ Once you're done, you may deactivate the environment.
 
 ## TODO
 
+  if (ongoingStop & ({message.author} == ongoingStopUser)):
+  UnboundLocalError: local variable 'ongoingStop' referenced before assignment
+
 1. $stop command to stop [stop the instance].
   <https://aws.plainenglish.io/the-fear-of-boto3-how-to-stop-ec2-instances-using-python-f0339a8ec986>
 
