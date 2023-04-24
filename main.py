@@ -45,8 +45,9 @@ async def on_message(message):
 
     msg = message.content
 
+# TODO: Add message.author
     if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+        await message.channel.send(f'Hello, {message.author}!')
 
     if message.content.startswith('$inspire'):
         quote = get_quote()
