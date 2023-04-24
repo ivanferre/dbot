@@ -89,6 +89,8 @@ These are resources to add further features to the original project:
   - <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html>
   - <https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/stop-instances.html>
 
+- Get info about the instance: <https://www.ktexperts.com/how-to-get-instance-details-by-using-boto3/>
+
 - To use databases with Python.
   - [Do You Know Python Has A Built-In Database?](https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd)
   - [Python MySQL](https://www.w3schools.com/python/python_mysql_getstarted.asp)
