@@ -18,8 +18,11 @@ Therefore, we need to get the instance name in the discord chat to be able to st
 
 1. Create a non-admin user in AWS.
     1. <https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html> to change default user and password.
+
 1. CONFIG
+
 1. $help = list of bot commands
+
 1. README
   Add functionality description.
 1. Use database to store lists of words.
@@ -71,6 +74,11 @@ See file publicDNS.txt for instance setting details.
   pip install python-dotenv
 
 ## Resources
+
+- [AWS CLI](https://pypi.org/project/awscli/)  provides a unified command line interface to Amazon Web Services.
+- [AWS SDK for Python (Boto3)](https://aws.amazon.com/sdk-for-python/)
+- [Python String Formatting Best Practices](https://realpython.com/python-string-formatting/)
+- [Virtual Environments and Packages](https://docs.python.org/3/tutorial/venv.html)
 
 ### To Use
 
