@@ -18,9 +18,9 @@ TOKEN = os.getenv("TOKEN")
 # list of words that trigger bot's actions
 sad_words = ["sad", "depressed", "unhappy", "angry", "miserable"]
 
-# we are performing a shutdown
-ongoingShutdown = False
-ongoingShutdownUser = ''
+# we are performing a Stop
+ongoingStop = False
+ongoingStopUser = ''
 
 # answers to the triggers
 starter_encouragements = [
@@ -61,13 +61,13 @@ async def on_message(message):
         await message.channel.send(random.choice(starter_encouragements))
 
     if message.content.startswith('$stopinstance'):
-        ongoingShutdown = True;
-        ongoingShutdownUser = message.author;
-        await message.channel.send('Are you sure you want to shutdown, {message.author}?')
+        ongoingStop = True;
+        ongoingStopUser = message.author;
+        await message.channel.send('Are you sure you want to STOP the instance, {message.author}?')
 
-# TODO implement actual shutdown: stop the AWS instance.
+# TODO implement actual stop the AWS instance.
     if message.content.startswith('$confirmstop'):
-        if (ongoingShutdown & ({message.author} == ongoingShutdownUser)):
+        if (ongoingStop & ({message.author} == ongoingStopUser)):
             await message.channel.send('Goodbye, {message.author} and everybody else!')
         else:
             await message.channel.send('{message.author}, you should not make fun with such important matters.')
