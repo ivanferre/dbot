@@ -10,6 +10,12 @@ Once you're done, you may deactivate the environment.
   if (ongoingStop & ({message.author} == ongoingStopUser)):
   UnboundLocalError: local variable 'ongoingStop' referenced before assignment
 
+1. Test functions, param and globals.
+
+- def myfunction()
+- bool = myfunction()
+- bool = myfunction() # uses global variable.
+
 1. $stop command to stop [stop the instance].
   <https://aws.plainenglish.io/the-fear-of-boto3-how-to-stop-ec2-instances-using-python-f0339a8ec986>
 
