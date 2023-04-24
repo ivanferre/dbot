@@ -2,3 +2,4 @@
 bot-token.env
 *.pem
 requirements.txt
+FirstEC2-ec2-access-key-eu-central-1a.pem.old
