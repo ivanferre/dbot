@@ -7,7 +7,7 @@ translator = Translator()
 data = ['Dobrý deň', 'majestátny orol', 'krehká dohoda']
 
 # Original example provided by https://zetcode.com/python/googletrans/
-# * It crashes, somehow.
+# * The following line crashes, somehow.
 # translated = translator.translate(data, src='sk', dest='ca')
 # for trans in translated:
 #     print('Translating...')
