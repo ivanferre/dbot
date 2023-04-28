@@ -36,4 +36,5 @@ Install it from PyPI:
 
     pip install googletrans
 
-<!-- TODO https://zetcode.com/python/googletrans/ -->
+<!-- https://zetcode.com/python/googletrans/ -->
+<!-- TODO https://medium.com/analytics-vidhya/translate-list-and-pandas-data-frame-using-googletrans-library-in-python-f28b8cb84f21 -->
