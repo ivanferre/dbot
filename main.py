@@ -26,7 +26,7 @@ ongoingStopUser = ''
 starter_encouragements = [
   "Cheer up!",
   "Hang in there.",
-  "You are a great person / bot!"
+  "You are a great person!"
 ]
 
 # Get a quote from the Zenquotes API

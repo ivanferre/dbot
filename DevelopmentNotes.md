@@ -1,9 +1,10 @@
 # Development Notes
 
-Remember to activate the testing environment!
-Learn about Python environments.
+**Remember to activate the testing environment!**
 
-Once you're done, you may deactivate the environment.
+Learn about Python environments!
+
+Once you're done, you may **deactivate the environment**.
 
 ## TODO
 
@@ -21,7 +22,7 @@ Once you're done, you may deactivate the environment.
 
 Command is:
 
-  ec2.Instance('<INSTANCE-ID>').stop()
+  ec2.Instance('{INSTANCE-ID}').stop()
 
 Therefore, we need to get the instance name in the discord chat to be able to stop the bot. Log message uses it(?)
 
