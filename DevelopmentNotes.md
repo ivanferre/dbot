@@ -8,7 +8,14 @@ Once you're done, you may **deactivate the environment**.
 
 ## TODO
 
-  if (ongoingStop & ({message.author} == ongoingStopUser)):
+When I execute `$confirmstop`:
+
+  (test_env) ubuntu@ip-172-31-16-157:~/dbot$ 2023-04-28 11:50:54 ERROR    discord.client Ignoring exception in on_message
+  Traceback (most recent call last):
+    File "/home/ubuntu/.local/lib/python3.10/site-packages/discord/client.py", line 441, in _run_event
+      await coro(*args, **kwargs)
+    File "/home/ubuntu/dbot/main.py", line 70, in on_message
+      if (ongoingStop & ({message.author} == ongoingStopUser)):
   UnboundLocalError: local variable 'ongoingStop' referenced before assignment
 
 1. Clarify Amazon login: .pem file, fingerprint, etc.
