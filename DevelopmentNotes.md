@@ -11,6 +11,15 @@ Once you're done, you may **deactivate the environment**.
   if (ongoingStop & ({message.author} == ongoingStopUser)):
   UnboundLocalError: local variable 'ongoingStop' referenced before assignment
 
+1. Clarify Amazon login: .pem file, fingerprint, etc.
+
+  The authenticity of host 'ec2-52-28-48-82.eu-central-1.compute.amazonaws.com (52.28.48.82)' can't be established.
+  ED25519 key fingerprint is SHA256:DmKx0TxK+s3qS8WcOcUAtZLhJi0P4Id41lRHGMHEWHU.
+  This host key is known by the following other names/addresses:
+      ~/.ssh/known_hosts:7: [hashed name]
+      ~/.ssh/known_hosts:10: [hashed name]
+  Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+
 1. Test functions, param and globals.
 
 - def myfunction()
