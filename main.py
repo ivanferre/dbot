@@ -26,7 +26,21 @@ ongoingStopUser = ''
 starter_encouragements = [
   "Cheer up!",
   "Hang in there.",
-  "You are a great person!"
+  "You are a great person!",
+  "Don't give up, you still have us."
+]
+
+# Commands List
+commands_list = [
+    "$hello           Greetings.",
+    "$inspire         Receive an inspiring quote.",
+    "$help            List available commands.",
+    "$stopinstance    (implementation in progress)",
+    "$confirmstop     (implementation in progress)",
+    "$translate       (implementation in progress)",
+    "$meeting         (implementation in progress)",
+    "$question        (implementation in progress)",
+    "$answer          (implementation in progress)"
 ]
 
 # Get a quote from the Zenquotes API
@@ -56,6 +70,13 @@ async def on_message(message):
     if message.content.startswith('$inspire'):
         quote = get_quote()
         await message.channel.send(quote)
+
+    if message.content.startswith('$help'):
+        # for each line in commands_list
+        # add line to out_list
+        # await message.channel.send(outList)
+        outList = "These are the available commands:" 
+        await message.channel.send(outList)
 
     if any(word in msg for word in sad_words):
         await message.channel.send(random.choice(starter_encouragements))
