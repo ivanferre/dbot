@@ -72,11 +72,12 @@ async def on_message(message):
         await message.channel.send(quote)
 
     if message.content.startswith('$help'):
-        # for each line in commands_list
-        # add line to out_list
-        # await message.channel.send(outList)
-        outList = "These are the available commands:" 
-        await message.channel.send(outList)
+        s = "These are the available commands:"
+        await message.channel.send("These are the available commands:")
+        while s in commands_list:
+            await message.channel.send(s)
+        else:
+            await message.channel.send("Would you like to suggest further functionality?")
 
     if any(word in msg for word in sad_words):
         await message.channel.send(random.choice(starter_encouragements))
