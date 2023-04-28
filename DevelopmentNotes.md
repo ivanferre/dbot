@@ -47,11 +47,11 @@ Therefore, we need to get the instance name in the discord chat to be able to st
 
 1. CONFIG
 
-1. $help = list of bot commands
-
 1. README
   Add functionality description.
+
 1. Use database to store lists of words.
+
 1. $question - record somebody asked something.
     1. Set reminder (May anybody answer {question.user}, please?)
     1. Store $question in database.
