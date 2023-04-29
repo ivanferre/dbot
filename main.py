@@ -1,11 +1,23 @@
+# for the discord bot
 import discord
+
+# to use the APIs
 import requests
 
+# for the environment
 import os
 from dotenv import load_dotenv
 
 import json
-import random
+import random   # encouragement
+
+# for the translation functionality
+import googletrans
+from googletrans import Translator
+translator = Translator(service_urls=[
+ 	'translate.google.com',
+])
+translator = Translator()
 
 
 # Create the Discord bot.
@@ -79,6 +91,27 @@ async def on_message(message):
         else:
             await message.channel.send("Would you like to suggest further functionality?")
 
+    # translation functions
+    # msg == message.content
+    if msg.startswith('$translate'):
+        # remove '$translate ' from msg
+        userText = msg.replace("$translate ", "")
+        trad = translator.translate(userText,'en')
+        await message.channel.send(f'{message.author} says: {trad.text}.')
+#        await message.channel.send(trad.text)
+        print(trad.text)
+
+    if msg.startswith('$ubersetz '):
+        # remove '$translate ' from msg
+        userText = msg.replace("$ubersetz ", "")
+        trad = translator.translate(userText,'de')
+        await message.channel.send(f'{message.author} sagt: {trad.text}.')
+        # ! DEBUG
+        await message.channel.send(trad.text)
+        print(trad.text)
+
+
+    # encouragement
     if any(word in msg for word in sad_words):
         await message.channel.send(random.choice(starter_encouragements))
 
@@ -88,6 +121,7 @@ async def on_message(message):
         await message.channel.send('Are you sure you want to STOP the instance, {message.author}?')
 
 # TODO implement actual stop the AWS instance.
+# ! FIX: why can't find the definition of the ongoing variables?
     if message.content.startswith('$confirmstop'):
         if (ongoingStop & ({message.author} == ongoingStopUser)):
             await message.channel.send('Goodbye, {message.author} and everybody else!')
