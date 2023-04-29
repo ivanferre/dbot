@@ -36,5 +36,7 @@ Install it from PyPI:
 
     pip install googletrans
 
-<!-- https://zetcode.com/python/googletrans/ -->
+Successfully performed all tests in  <https://zetcode.com/python/googletrans/>
+The translation of lists of strings does not work, but it is possible (see translate_list.py) to iterate on the list to do the same job.
+
 <!-- TODO https://medium.com/analytics-vidhya/translate-list-and-pandas-data-frame-using-googletrans-library-in-python-f28b8cb84f21 -->
