@@ -101,8 +101,6 @@ async def on_message(message):
         await message.channel.send(quote)
 
     if message.content.startswith('$help'):
-        # s = "These are the available commands:"
-        # ! FIX: the list of commands is not output
         await message.channel.send("These are the available commands:")
         for s in commands_list:
             print (s)
