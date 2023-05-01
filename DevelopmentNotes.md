@@ -8,6 +8,8 @@ Once you're done, you may **deactivate the environment**.
 
 ## TODO
 
+1. Use database to store lists of words.
+
 When I execute `$confirmstop`:
 
   (test_env) ubuntu@ip-172-31-16-157:~/dbot$ 2023-04-28 11:50:54 ERROR    discord.client Ignoring exception in on_message
@@ -17,8 +19,6 @@ When I execute `$confirmstop`:
     File "/home/ubuntu/dbot/main.py", line 70, in on_message
       if (ongoingStop & ({message.author} == ongoingStopUser)):
   UnboundLocalError: local variable 'ongoingStop' referenced before assignment
-
-1. Use database to store lists of words.
 
 1. $question - record somebody asked something.
     1. Set reminder (May anybody answer {question.user}, please?)
@@ -114,6 +114,7 @@ These are resources to add further features to the original project:
 - To use databases with Python.
   - [Do You Know Python Has A Built-In Database?](https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd)
   - [Python MySQL](https://www.w3schools.com/python/python_mysql_getstarted.asp)
+  - <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.MySQL.html>
   - [Python MongoDB](https://www.w3schools.com/python/python_mongodb_getstarted.asp)
 
 ### On the Project
