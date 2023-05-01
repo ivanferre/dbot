@@ -18,6 +18,19 @@ When I execute `$confirmstop`:
       if (ongoingStop & ({message.author} == ongoingStopUser)):
   UnboundLocalError: local variable 'ongoingStop' referenced before assignment
 
+1. Use database to store lists of words.
+
+1. $question - record somebody asked something.
+    1. Set reminder (May anybody answer {question.user}, please?)
+    1. Store $question in database.
+    1. Set reminder period in .env
+    1. $answer
+    1. Match $answer with $question -> move to #q&a channel
+    1. Clean $question from database
+
+1. $meeting schedules a meeting: store it in db, publish it in #agenda channel, set reminder 30 min. ahead.
+1. $translate:LL str translates the string to language LL by calling (deepl|google) API.
+
 1. Clarify Amazon login: .pem file, fingerprint, etc.
 
   The authenticity of host 'ec2-52-28-48-82.eu-central-1.compute.amazonaws.com (52.28.48.82)' can't be established.
@@ -26,12 +39,6 @@ When I execute `$confirmstop`:
       ~/.ssh/known_hosts:7: [hashed name]
       ~/.ssh/known_hosts:10: [hashed name]
   Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-
-1. Test functions, param and globals.
-
-- def myfunction()
-- bool = myfunction()
-- bool = myfunction() # uses global variable.
 
 1. $stop command to stop [stop the instance].
   <https://aws.plainenglish.io/the-fear-of-boto3-how-to-stop-ec2-instances-using-python-f0339a8ec986>
@@ -49,19 +56,6 @@ Therefore, we need to get the instance name in the discord chat to be able to st
 
 1. README
   Add functionality description.
-
-1. Use database to store lists of words.
-
-1. $question - record somebody asked something.
-    1. Set reminder (May anybody answer {question.user}, please?)
-    1. Store $question in database.
-    1. Set reminder period in .env
-    1. $answer
-    1. Match $answer with $question -> move to #q&a channel
-    1. Clean $question from database
-
-1. $meeting schedules a meeting: store it in db, publish it in #agenda channel, set reminder 30 min. ahead.
-1. $translate:LL str translates the string to language LL by calling (deepl|google) API.
 
 - [Getting Started with the DeepL Language Translation API in Python](https://thenewstack.io/getting-started-with-the-deepl-language-translation-api-in-python/)
 -[deepl-python in GitHub](https://github.com/DeepLcom/deepl-python)
