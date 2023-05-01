@@ -100,10 +100,11 @@ async def on_message(message):
         await message.channel.send(quote)
 
     if message.content.startswith('$help'):
-        s = "These are the available commands:"
+        # s = "These are the available commands:"
         # ! FIX: the list of commands is not output
         await message.channel.send("These are the available commands:")
         while s in commands_list:
+            print (s)
             await message.channel.send(s)
         else:
             await message.channel.send("Would you like to suggest further functionality?")
@@ -133,22 +134,10 @@ async def on_message(message):
         ongoingStopUser = message.author;
         await message.channel.send(f'Are you sure you want to STOP the instance, {message.author}?')
 
-# TODO implement actual stop the AWS instance.
-# ! FIX: why can't find the definition of the ongoing variables?
     if message.content.startswith('$confirmstop'):
-        #global ongoingStop
-        #global ongoingStopUser
-        # ! DEBUG
-        print (f'ongoingStop = {ongoingStop}')
-        print (f'ongoingStopUser = {ongoingStopUser}')
-        print (f'message.author = {message.author}')
-        print (f'(message.author == ongoingStopUser) = {({message.author} == ongoingStopUser)}')
-        if (str1 == str2):
-            print ("Both strings are equal")
-        else:
-            print ("Strings are different.")
 
-        if (ongoingStop & ({message.author} == ongoingStopUser)):
+        if (ongoingStop & (message.author == ongoingStopUser)):
+# TODO implement actual stop the AWS instance.
             await message.channel.send(f'Goodbye, {message.author} and everybody else!')
         else:
             await message.channel.send(f'{message.author}, you should not make fun with such important matters.')
