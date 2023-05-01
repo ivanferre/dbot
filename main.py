@@ -31,17 +31,18 @@ starter_encouragements = [
 ]
 
 # Commands List
-commands_list = [
-    "$hello           Greetings.",
-    "$inspire         Receive an inspiring quote.",
-    "$help            List available commands.",
-    "$stopinstance    (implementation in progress)",
+commands_list = (
+    "$answer          (implementation in progress)",
     "$confirmstop     (implementation in progress)",
-    "$translate       (implementation in progress)",
+    "$hello           Greetings.",
+    "$help            List available commands.",
+    "$inspire         Receive an inspiring quote.",
     "$meeting         (implementation in progress)",
     "$question        (implementation in progress)",
-    "$answer          (implementation in progress)"
-]
+    "$stopinstance    Requests to stop the AWS EC2 instance.",
+    "$translate       Translate text to English",
+    "$ubersetz        Translate text to German"
+)
 
 # we are performing a Stop
 ongoingStop = False
@@ -103,7 +104,7 @@ async def on_message(message):
         # s = "These are the available commands:"
         # ! FIX: the list of commands is not output
         await message.channel.send("These are the available commands:")
-        while s in commands_list:
+        for s in commands_list:
             print (s)
             await message.channel.send(s)
         else:
