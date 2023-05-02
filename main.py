@@ -93,7 +93,7 @@ async def on_message(message):
 
 # TODO: Replace message.author by user's name
     if message.content.startswith('$hello'):
-        await message.channel.send(f'Hello, {message.author}!')
+        await message.channel.send(f'Hello, {message.author.name}!')
         # print(f'Hello, {message.author}, nice to see you again.')
 
     if message.content.startswith('$inspire'):
@@ -137,9 +137,9 @@ async def on_message(message):
 
         if (ongoingStop & (message.author == ongoingStopUser)):
 # TODO implement actual stop the AWS instance.
-            await message.channel.send(f'Goodbye, {message.author} and everybody else!')
+            await message.channel.send(f'Goodbye, {message.author.name} and everybody else!')
         else:
-            await message.channel.send(f'{message.author}, you should not make fun with such important matters.')
+            await message.channel.send(f'{message.author.name}, you should not make fun with such important matters.')
 
 btoken = os.getenv('TOKEN')
 client.run(btoken)
