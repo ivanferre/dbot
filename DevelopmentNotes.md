@@ -10,16 +10,6 @@ Once you're done, you may **deactivate the environment**.
 
 1. Use database to store lists of words.
 
-When I execute `$confirmstop`:
-
-  (test_env) ubuntu@ip-172-31-16-157:~/dbot$ 2023-04-28 11:50:54 ERROR    discord.client Ignoring exception in on_message
-  Traceback (most recent call last):
-    File "/home/ubuntu/.local/lib/python3.10/site-packages/discord/client.py", line 441, in _run_event
-      await coro(*args, **kwargs)
-    File "/home/ubuntu/dbot/main.py", line 70, in on_message
-      if (ongoingStop & ({message.author} == ongoingStopUser)):
-  UnboundLocalError: local variable 'ongoingStop' referenced before assignment
-
 1. $question - record somebody asked something.
     1. Set reminder (May anybody answer {question.user}, please?)
     1. Store $question in database.
@@ -63,6 +53,27 @@ Therefore, we need to get the instance name in the discord chat to be able to st
 1. Increase Security against MitM attacks: [(Optional) Get the instance fingerprint](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connection-prereqs.html)
 1. Store Servers where the bot is used. Keep track!
 1. Alternative database
+
+## Discord API
+
+<https://discordpy.readthedocs.io/en/stable/api.html#discord.Member>
+
+## sqlite3 database
+
+CLI to SQLite3
+<https://manpages.ubuntu.com/manpages/jammy/en/man1/sqlite3.1.html>
+
+Use `.schema tablename` to see the description of a table.
+<https://www.sqlitetutorial.net/sqlite-describe-table/>
+
+Use `.help` and `.quit` for obvious commands.
+
+Use `select * from tablename;` and other SQL commands, when needed.
+
+Dates are stored as text, and may be retrieved in different ways.
+<https://www.sqlite.org/lang_datefunc.html>
+
+Use sqlite3 from Python: <https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd>
 
 ## Deploy in AWS
 
