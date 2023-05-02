@@ -3,4 +3,4 @@ bot-token.env
 *.pem
 requirements.txt
 *.old
-test.db
+*.db
