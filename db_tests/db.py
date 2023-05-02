@@ -48,7 +48,7 @@ with con:
     print("Execute SELECTs")
     data = con.execute("SELECT * FROM USER")
     for row in data:
-        print (row)
+        print (f'{row[0]} - {row[1]} - {row[2]}')
 
 sql_update = "UPDATE USER SET age = 33 WHERE id = 3"
 print(sql_update)
@@ -62,8 +62,8 @@ data = [
     (5, 'Eric', 5)
 ]
 print("Execute INSERTs...")
-with con:
-    con.executemany(sql, data)
+#with con:
+    #con.executemany(sql, data)
 
 sql_del = 'DELETE FROM USER WHERE id = 4'
 print ("Deleting row 4...")
