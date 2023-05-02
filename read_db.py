@@ -22,9 +22,7 @@ def getSadExpressions(connection):
     with connection:
         data = connection.execute(sql)
         for row in data:
-            print(row)
             exprlist.append(row[0])
-            print(exprlist)
         return exprlist
 
 

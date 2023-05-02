@@ -23,14 +23,14 @@ from read_db import *
 # open database connection
 db = openDatabase('dbot.db')
 
-print("Connected to database.") # ! debug
+# print("Connected to database.") # ! debug
 
 ##### globals declaration
 
 # list of words that trigger bot's actions
 sad_words = getSadExpressions(db)
-print (f'We have {len(sad_words)} sad words.')
-print (sad_words)
+# print (f'We have {len(sad_words)} sad words.')
+# print (sad_words)
 ## old_sad_words = ["sad", "depressed", "unhappy", "angry", "miserable"]
 
 # answers to the triggers
@@ -102,10 +102,8 @@ async def on_message(message):
 
     msg = message.content
 
-# TODO: Replace message.author by user's name
     if message.content.startswith('$hello'):
         await message.channel.send(f'Hello, {message.author.name}!')
-        # print(f'Hello, {message.author}, nice to see you again.')
 
     if message.content.startswith('$inspire'):
         quote = get_quote()
