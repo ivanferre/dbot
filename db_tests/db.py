@@ -4,6 +4,9 @@
 #
 # Source:
 # https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd
+#
+# sqlite ubuntu cli client:
+# https://manpages.ubuntu.com/manpages/jammy/en/man1/sqlite3.1.html
 
 # acquire the library
 print ("Acquire the library...")
