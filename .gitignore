@@ -4,3 +4,4 @@ bot-token.env
 requirements.txt
 *.old
 *.db
+dbot.db
