@@ -10,6 +10,8 @@ Once you're done, you may **deactivate the environment**.
 
 1. Use database to store lists of words.
 
+    - Get the list of encouragements.
+
 1. $question - record somebody asked something.
     1. Set reminder (May anybody answer {question.user}, please?)
     1. Store $question in database.
@@ -19,7 +21,6 @@ Once you're done, you may **deactivate the environment**.
     1. Clean $question from database
 
 1. $meeting schedules a meeting: store it in db, publish it in #agenda channel, set reminder 30 min. ahead.
-1. $translate:LL str translates the string to language LL by calling (deepl|google) API.
 
 1. Clarify Amazon login: .pem file, fingerprint, etc.
 
