@@ -17,10 +17,21 @@ from dotenv import load_dotenv
 import json
 import random   # encouragement
 
+# import database functions
+from read_db import *
+
+# open database connection
+db = openDatabase('dbot.db')
+
+print("Connected to database.") # ! debug
+
 ##### globals declaration
 
 # list of words that trigger bot's actions
-sad_words = ["sad", "depressed", "unhappy", "angry", "miserable"]
+sad_words = getSadExpressions(db)
+print (f'We have {len(sad_words)} sad words.')
+print (sad_words)
+## old_sad_words = ["sad", "depressed", "unhappy", "angry", "miserable"]
 
 # answers to the triggers
 starter_encouragements = [
