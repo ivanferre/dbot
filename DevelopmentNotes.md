@@ -129,9 +129,24 @@ These are resources to add further features to the original project:
 
 - To use databases with Python.
   - [Do You Know Python Has A Built-In Database?](https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd)
+  - <https://www.sqlitetutorial.net/sqlite-select/>
+  - [Date And Time Functions](https://www.sqlite.org/lang_datefunc.html)
   - [Python MySQL](https://www.w3schools.com/python/python_mysql_getstarted.asp)
   - <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.MySQL.html>
   - [Python MongoDB](https://www.w3schools.com/python/python_mongodb_getstarted.asp)
+
+### Learn further Python
+
+- [Python List](https://www.programiz.com/python-programming/list)
+- <https://docs.python.org/3/tutorial/venv.html>
+- <https://stackoverflow.com/questions/2349991/how-do-i-import-other-python-files>
+<https://stackoverflow.com/questions/20309456/how-do-i-call-a-function-from-another-py-file>
+
+### On Development Tools
+
+- <https://quokkajs.com/docs/>
+- <https://www.freecodecamp.org/news/git-diff-command/>
+- <https://support.mozilla.org/en-US/kb/keyboard-shortcuts-thunderbird>
 
 ### On the Project
 
