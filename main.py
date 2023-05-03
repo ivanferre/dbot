@@ -131,7 +131,6 @@ async def on_message(message):
         trad = translator.translate(userText,'de')
         await message.channel.send(f'{message.author} sagt: {trad.text}.')
 
-
     # encouragement
     if any(word in msg for word in sad_words):
         await message.channel.send(random.choice(starter_encouragements))
