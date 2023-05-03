@@ -28,6 +28,15 @@ def getSadExpressions(connection):
 
 # read table ENCOURAGEMENTS and
 # populate table starter_encouragements
+def getEncouragements(connection):
+    sql = "SELECT expression FROM ENCOURAGEMENTS"
+    cheers = []
+    with connection:
+        data = connection.execute(sql)
+        for row in data:
+            cheers.append(row[0])
+        return cheers
+
 
 # read stored questions
 

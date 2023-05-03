@@ -34,12 +34,13 @@ sad_words = getSadExpressions(db)
 ## old_sad_words = ["sad", "depressed", "unhappy", "angry", "miserable"]
 
 # answers to the triggers
-starter_encouragements = [
-  "Cheer up!",
-  "Hang in there.",
-  "You are a great person!",
-  "Don't give up, you still have us."
-]
+starter_encouragements = getEncouragements(db)
+# starter_encouragements = [
+#   "Cheer up!",
+#   "Hang in there.",
+#   "You are a great person!",
+#   "Don't give up, you still have us."
+# ]
 
 # Commands List
 commands_list = (
