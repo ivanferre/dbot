@@ -131,6 +131,30 @@ async def on_message(message):
         trad = translator.translate(userText,'de')
         await message.channel.send(f'{message.author} sagt: {trad.text}.')
 
+    if msg.startswith('$question'):
+        # record the question in DB: id, author, author.name, timestamp, content, (timetocheck, duetime)
+        #
+        # thank the author in same channel
+        #
+        # send the question to the resources channel (include id and say to use it)
+        #
+        # periodically remind people about the question?
+
+    if msg.startswith('$answer'):
+        # record the answer...
+        #
+        # thank the person who answers
+        #
+        # notify the person who made the question, and ask if it accepts.
+
+    if msg.startswith('$accept'):
+        # if accept no
+        #   notify both
+        # else
+        #   thank answerer in public (resources channel?)
+        # update answer as accepted in db
+        # update question as closed in db 
+
     # encouragement
     if any(word in msg for word in sad_words):
         await message.channel.send(random.choice(starter_encouragements))
