@@ -8,10 +8,6 @@ Once you're done, you may **deactivate the environment**.
 
 ## TODO
 
-1. Use database to store lists of words.
-
-    - Get the list of encouragements.
-
 1. $question - record somebody asked something.
     1. Set reminder (May anybody answer {question.user}, please?)
     1. Store $question in database.
@@ -20,7 +16,15 @@ Once you're done, you may **deactivate the environment**.
     1. Match $answer with $question -> move to #q&a channel
     1. Clean $question from database
 
+1. Make encouragements case-insensitive.
+
+1. Randomize greetings.
+
 1. $meeting schedules a meeting: store it in db, publish it in #agenda channel, set reminder 30 min. ahead.
+
+- <https://stackoverflow.com/questions/8600161/executing-periodic-actions>
+- <https://superfastpython.com/thread-periodic-background/>
+- <https://medium.com/greedygame-engineering/an-elegant-way-to-run-periodic-tasks-in-python-61b7c477b679>
 
 1. Clarify Amazon login: .pem file, fingerprint, etc.
 
