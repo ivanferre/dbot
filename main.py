@@ -6,10 +6,11 @@
 # -----------------
 
 # for the discord bot
-from questions import receiveQuestion
+import discord
+
+# for google translator
 from googletrans import Translator
 import googletrans
-import discord
 
 # to use the APIs
 import requests
