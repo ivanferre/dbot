@@ -141,7 +141,7 @@ async def on_message(message):
     if msg.startswith('$answer'):
         # !DEBUG
         userText = msg.replace("$answer ", "")
-        await message.channel.send(f'{message.author} asks: {userText}')
+        await message.channel.send(f'{message.author} answers: {userText}')
         # TODO
         # record the answer...
         #
