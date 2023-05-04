@@ -3,6 +3,7 @@
 # FirstBot discord bot
 
 # importing modules
+# -----------------
 
 # for the discord bot
 from questions import receiveQuestion
@@ -23,16 +24,12 @@ import random   # encouragement
 # import database functions
 from read_db import *
 
-# open database connection
-db = openDatabase('dbot.db')
+# date and time functions
+from datetime import date
+from datetime import datetime
 
 # globals declaration
-
-# list of words that trigger bot's actions
-sad_words = getSadExpressions(db)
-
-# answers to the triggers
-starter_encouragements = getEncouragements(db)
+# -------------------
 
 # Commands List
 commands_list = (
@@ -49,17 +46,24 @@ commands_list = (
 )
 
 
-# we are performing a Stop
+# we are not yet performing a Stop
 ongoingStop = False
 ongoingStopUser = ''
 
+# time format
+# https://www.programiz.com/python-programming/datetime/current-datetime
+# https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
+strTimeFormat = '%d/%m/%y %H:%M:%S'
+
 # Initialization
 
-# for the translation functionality
-translator = Translator(service_urls=[
-    'translate.google.com',
-])
-translator = Translator()
+# open database connection
+db = openDatabase('dbot.db')
+# list of words that trigger bot's actions
+sad_words = getSadExpressions(db)
+
+# answers to the triggers
+starter_encouragements = getEncouragements(db)
 
 # Create the Discord bot.
 intents = discord.Intents.default()
@@ -67,6 +71,12 @@ intents.message_content = True
 client = discord.Client(intents=intents)
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
+
+# for the translation functionality
+translator = Translator(service_urls=[
+    'translate.google.com',
+])
+translator = Translator()
 
 # functions
 
@@ -79,9 +89,9 @@ def get_quote():
     quote = json_data[0]['q'] + " -" + json_data[0]['a']
     return (quote)
 
-#####
+#############
 # Here we go!
-#####
+#############
 
 # Log the bot has logged in.
 
@@ -127,20 +137,19 @@ async def on_message(message):
         trad = translator.translate(userText, 'de')
         await message.channel.send(f'{message.author} sagt: {trad.text}')
 
-    if msg.startswith('$question'):
-        # !DEBUG
-        userText = msg.replace("$question ", "")
         # TODO
-        # record the question in DB: id, author, author.name, timestamp, content, (timetocheck, duetime)
-        receiveQuestion(userText)
-        #
+    if msg.startswith('$question'):
+        now = datetime.now()
+        content = msg.replace("$question ", "")
+        idQuestion = insertQuestion(
+            msg.author, msg.author.name, content, now.strftime(strTimeFormat))
         # thank the author in same channel
-        await message.channel.send(f'From main.py')
-        await message.channel.send(f'Dear {message.author.name}, thank you for your very interesting question: {userText}')
-        #
+        await message.channel.send(f'Dear {message.author.name}, thank you for your very interesting question: {content}')
+        # TODO
         # send the question to the resources channel (include id and say to use it)
         #
         # periodically remind people about the question?
+        # (timetocheck, duetime)
 
     if msg.startswith('$answer'):
         # !DEBUG
