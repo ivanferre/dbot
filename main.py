@@ -143,7 +143,7 @@ async def on_message(message):
         now = datetime.now()
         content = msg.replace("$question ", "")
         idQuestion = insertQuestion(
-            msg.author, msg.author.name, content, now.strftime(strTimeFormat))
+            message.author, message.author.name, content, now.strftime(strTimeFormat))
         # thank the author in same channel
         await message.channel.send(f'Dear {message.author.name}, thank you for your very interesting question: {content}')
         # TODO
