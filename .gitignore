@@ -5,4 +5,6 @@ requirements.txt
 *.old
 *.db
 dbot.db
-__pycache__/read_db.cpython-310.pyc
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
