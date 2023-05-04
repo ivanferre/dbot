@@ -5,6 +5,7 @@
 # importing modules
 
 # for the discord bot
+from questions import receiveQuestion
 from googletrans import Translator
 import googletrans
 import discord
@@ -46,6 +47,7 @@ commands_list = (
     "$translate       Translate text to English",
     "$ubersetz        Translate text to German"
 )
+
 
 # we are performing a Stop
 ongoingStop = False
@@ -128,11 +130,13 @@ async def on_message(message):
     if msg.startswith('$question'):
         # !DEBUG
         userText = msg.replace("$question ", "")
-        await message.channel.send(f'{message.author} asks: {userText}')
         # TODO
         # record the question in DB: id, author, author.name, timestamp, content, (timetocheck, duetime)
+        receiveQuestion(userText)
         #
         # thank the author in same channel
+        await message.channel.send(f'From main.py')
+        await message.channel.send(f'Dear {message.author.name}, thank you for your very interesting question: {userText}')
         #
         # send the question to the resources channel (include id and say to use it)
         #
