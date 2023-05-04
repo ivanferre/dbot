@@ -2,9 +2,11 @@
 
 # FirstBot discord bot
 
-##### importing modules
+# importing modules
 
 # for the discord bot
+from googletrans import Translator
+import googletrans
 import discord
 
 # to use the APIs
@@ -23,7 +25,7 @@ from read_db import *
 # open database connection
 db = openDatabase('dbot.db')
 
-##### globals declaration
+# globals declaration
 
 # list of words that trigger bot's actions
 sad_words = getSadExpressions(db)
@@ -49,13 +51,11 @@ commands_list = (
 ongoingStop = False
 ongoingStopUser = ''
 
-##### Initialization
+# Initialization
 
 # for the translation functionality
-import googletrans
-from googletrans import Translator
 translator = Translator(service_urls=[
- 	'translate.google.com',
+    'translate.google.com',
 ])
 translator = Translator()
 
@@ -66,25 +66,31 @@ client = discord.Client(intents=intents)
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
 
-##### functions
+# functions
 
 # Get a quote from the Zenquotes API
+
+
 def get_quote():
-  response = requests.get("https://zenquotes.io/api/random")
-  json_data = json.loads(response.text)
-  quote = json_data[0]['q'] + " -" + json_data[0]['a']
-  return(quote)
+    response = requests.get("https://zenquotes.io/api/random")
+    json_data = json.loads(response.text)
+    quote = json_data[0]['q'] + " -" + json_data[0]['a']
+    return (quote)
 
 #####
-##### Here we go!
+# Here we go!
 #####
 
 # Log the bot has logged in.
+
+
 @client.event
 async def on_ready():
     print('FirstBot logged in as {0.user}'.format(client))
 
 # Listener
+
+
 @client.event
 async def on_message(message):
     if message.author == client.user:
@@ -110,16 +116,20 @@ async def on_message(message):
     if msg.startswith('$translate'):
         # remove '$translate ' from msg
         userText = msg.replace("$translate ", "")
-        trad = translator.translate(userText,'en')
-        await message.channel.send(f'{message.author} says: {trad.text}.')
+        trad = translator.translate(userText, 'en')
+        await message.channel.send(f'{message.author} says: {trad.text}')
 
     if msg.startswith('$ubersetz '):
         # remove '$translate ' from msg
         userText = msg.replace("$ubersetz ", "")
-        trad = translator.translate(userText,'de')
-        await message.channel.send(f'{message.author} sagt: {trad.text}.')
+        trad = translator.translate(userText, 'de')
+        await message.channel.send(f'{message.author} sagt: {trad.text}')
 
     if msg.startswith('$question'):
+        # !DEBUG
+        userText = msg.replace("$question ", "")
+        await message.channel.send(f'{message.author} asks: {userText}')
+        # TODO
         # record the question in DB: id, author, author.name, timestamp, content, (timetocheck, duetime)
         #
         # thank the author in same channel
@@ -129,6 +139,10 @@ async def on_message(message):
         # periodically remind people about the question?
 
     if msg.startswith('$answer'):
+        # !DEBUG
+        userText = msg.replace("$answer ", "")
+        await message.channel.send(f'{message.author} asks: {userText}')
+        # TODO
         # record the answer...
         #
         # thank the person who answers
@@ -136,28 +150,32 @@ async def on_message(message):
         # notify the person who made the question, and ask if it accepts.
 
     if msg.startswith('$accept'):
+        # !DEBUG
+        await message.channel.send(f'{message.author} has accepted the answer to her question.')
+        # TODO
         # if accept no
         #   notify both
         # else
         #   thank answerer in public (resources channel?)
         # update answer as accepted in db
-        # update question as closed in db 
+        # update question as closed in db
 
     # encouragement
     if any(word in msg for word in sad_words):
+        # TODO Make it case-insensitive
         await message.channel.send(random.choice(starter_encouragements))
 
     if message.content.startswith('$stopinstance'):
         global ongoingStop
         global ongoingStopUser
-        ongoingStop = True;
-        ongoingStopUser = message.author;
+        ongoingStop = True
+        ongoingStopUser = message.author
         await message.channel.send(f'Are you sure you want to STOP the instance, {message.author}?')
 
     if message.content.startswith('$confirmstop'):
 
         if (ongoingStop & (message.author == ongoingStopUser)):
-# TODO implement actual stop the AWS instance.
+            # TODO implement actual stop the AWS instance.
             await message.channel.send(f'Goodbye, {message.author.name} and everybody else!')
         else:
             await message.channel.send(f'{message.author.name}, you should not make fun with such important matters.')
