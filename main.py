@@ -23,7 +23,7 @@ import json
 import random   # encouragement
 
 # import database functions
-from read_db import *
+from database import *
 
 # date and time functions
 from datetime import date
