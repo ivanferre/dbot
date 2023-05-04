@@ -45,8 +45,16 @@ def getEncouragements(connection):
 # read stored questions
 
 # insert new question
-def insertQuestion(author, name, timestamp, content):
+def insertQuestion(connection, author, name, timestamp, content):
+    # ! DEBUG
     print(f'INSERT INTO QUESTIONS /{author}/{name}/{content}/{timestamp}/')
+    sql = "INSERT INTO QUESTIONS (QUESTION, AUTHOR, TIMESTAMP, STATUS) VALUES (?, ?, ?, ?)"
+    data = (content, author, timestamp, "Not Answered")
+    connection.execute(sql, data)
+    # get the id automatically generated
+    # TODO
+    # select with the same data including timestamp
+    # return ID
 
 # update question with temptative answer
 # pending to accept

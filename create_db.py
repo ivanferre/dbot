@@ -15,18 +15,18 @@ import sqlite3 as sl
 # if databse does not exist, it's created by python
 con = sl.connect('dbot.db')
 
-print ("Connected to dbot.db.")
+print("Connected to dbot.db.")
 
 # list of sad words to detect
-with con:
-    con.execute("""
-CREATE TABLE SAD_EXPRESSIONS (
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    expression TEXT
-);
-""")
+# with con:
+#     con.execute("""
+# CREATE TABLE SAD_EXPRESSIONS (
+#     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+#     expression TEXT
+# );
+# """)
 
-print ("Creating the sad expressions...")
+# print ("Creating the sad expressions...")
 
 # populate SAD_EXPRESSIONS
 sql = 'INSERT INTO SAD_EXPRESSIONS (id, expression) values (?, ?)'
@@ -53,7 +53,7 @@ with con:
     con.executemany(sql, data)
 print("Created SAD_EXPRESSIONS TABLE.")
 
-print ("Creating encouragements...")
+print("Creating encouragements...")
 # list of encouragement for sad people
 with con:
     con.execute("""
@@ -90,7 +90,7 @@ with con:
 print("Created ENCOURAGEMENTS TABLE.")
 
 # create table QUESTIONS
-print ("Creating...")
+print("Creating...")
 with con:
     con.execute("""
 CREATE TABLE QUESTIONS (
@@ -102,6 +102,7 @@ CREATE TABLE QUESTIONS (
 );
 """)
 
-print ("Done")
+# todo ---> Add column name (of the author) to questions.
+# todo ---> create table answers
 
-
+print("Done")
