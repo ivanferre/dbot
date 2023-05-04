@@ -54,7 +54,7 @@ ongoingStopUser = ''
 # time format
 # https://www.programiz.com/python-programming/datetime/current-datetime
 # https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
-strTimeFormat = '%d/%m/%y %H:%M:%S'
+strTimeFormat = '%d.%m.%y at %H:%M:%S'
 
 # Initialization
 
