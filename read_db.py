@@ -8,6 +8,8 @@ import sqlite3 as sl
 # @ database filename
 # @ returns a connection to a database
 # TODO check for errors (file not found, etc.)
+
+
 def openDatabase(dbfile):
     con = sl.connect(dbfile)
     return con
@@ -16,6 +18,8 @@ def openDatabase(dbfile):
 # populate list sad_words
 # @ connection: open database connection
 # @ exprlist: list to append the expressions read from database
+
+
 def getSadExpressions(connection):
     sql = "SELECT expression FROM SAD_EXPRESSIONS"
     exprlist = []
@@ -41,9 +45,10 @@ def getEncouragements(connection):
 # read stored questions
 
 # insert new question
+def insertQuestion(author, name, timestamp, content):
+    print(f'INSERT INTO QUESTIONS /{author}/{name}/{content}/{timestamp}/')
 
 # update question with temptative answer
 # pending to accept
 
 # update question with acceptance to answer
-
