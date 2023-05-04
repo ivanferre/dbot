@@ -23,24 +23,13 @@ from read_db import *
 # open database connection
 db = openDatabase('dbot.db')
 
-# print("Connected to database.") # ! debug
-
 ##### globals declaration
 
 # list of words that trigger bot's actions
 sad_words = getSadExpressions(db)
-# print (f'We have {len(sad_words)} sad words.')
-# print (sad_words)
-## old_sad_words = ["sad", "depressed", "unhappy", "angry", "miserable"]
 
 # answers to the triggers
 starter_encouragements = getEncouragements(db)
-# starter_encouragements = [
-#   "Cheer up!",
-#   "Hang in there.",
-#   "You are a great person!",
-#   "Don't give up, you still have us."
-# ]
 
 # Commands List
 commands_list = (
@@ -113,7 +102,6 @@ async def on_message(message):
     if message.content.startswith('$help'):
         await message.channel.send("These are the available commands:")
         for s in commands_list:
-            print (s)
             await message.channel.send(s)
         else:
             await message.channel.send("Would you like to suggest further functionality?")
