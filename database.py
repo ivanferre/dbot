@@ -48,8 +48,8 @@ def getEncouragements(connection):
 def insertQuestion(connection, author, name, timestamp, content):
     # ! DEBUG
     print(f'INSERT INTO QUESTIONS /{author}/{name}/{content}/{timestamp}/')
-    sql = "INSERT INTO QUESTIONS (QUESTION, AUTHOR, TIMESTAMP, STATUS) VALUES (?, ?, ?, ?)"
-    data = (content, author, timestamp, "Not Answered")
+    sql = "INSERT INTO QUESTIONS (QUESTION, AUTHOR, NAME, TIMESTAMP, STATUS, REMINDPERIOD, DEADLINE) VALUES (?, ?, ?, ?, ?, ?, ?)"
+    data = (content, author, timestamp, "New", reminderPeriod, answerDeadline)
     connection.execute(sql, data)
     # get the id automatically generated
     # TODO
