@@ -32,6 +32,8 @@ from datetime import datetime
 # globals declaration
 # -------------------
 
+from globals import *
+
 # Commands List
 commands_list = (
     "$answer          (implementation in progress)",
@@ -50,17 +52,6 @@ commands_list = (
 # we are not yet performing a Stop
 ongoingStop = False
 ongoingStopUser = ''
-
-# time format
-# https://www.programiz.com/python-programming/datetime/current-datetime
-# https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
-strTimeFormat = '%d.%m.%y %H:%M:%S'
-
-# default minutes between reminders to answer questions
-# 60 x 24  = 1440
-reminderPeriod = 1440
-
-# default minutes
 
 
 # Initialization

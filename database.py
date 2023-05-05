@@ -1,7 +1,10 @@
 # read_db.py
 
-# acquire the library
+# acquire the sqlite library
 import sqlite3 as sl
+
+# get the global application variables
+from globals import *
 
 # create database connection
 # if databse does not exist, it's created by python
@@ -49,14 +52,16 @@ def insertQuestion(connection, author, name, timestamp, content):
     # ! DEBUG
     print(f'INSERT INTO QUESTIONS /{author}/{name}/{content}/{timestamp}/')
     sql = "INSERT INTO QUESTIONS (QUESTION, AUTHOR, NAME, TIMESTAMP, STATUS, REMINDPERIOD, DEADLINE) VALUES (?, ?, ?, ?, ?, ?, ?)"
-    data = (content, author, timestamp, "New", reminderPeriod, answerDeadline)
+    data = (content, author, timestamp, "New", reminderPeriod, answersDeadline)
     connection.execute(sql, data)
     # get the id automatically generated
     # TODO
     # select with the same data including timestamp
     # return ID
 
+# TODO
 # update question with temptative answer
 # pending to accept
-
+#
+# TODO
 # update question with acceptance to answer
