@@ -56,6 +56,13 @@ ongoingStopUser = ''
 # https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 strTimeFormat = '%d.%m.%y %H:%M:%S'
 
+# default minutes between reminders to answer questions
+# 60 x 24  = 1440
+reminderPeriod = 1440
+
+# default minutes
+
+
 # Initialization
 
 # open database connection
@@ -148,8 +155,8 @@ async def on_message(message):
         await message.channel.send(f'Dear {message.author.name}, thank you for your very interesting question: {content}')
         # TODO
         # send the question to the resources channel (include id and say to use it)
-        #
-        # periodically remind people about the question?
+        # TODO
+        # periodically remind people about the question
         # (remindPeriod, deadline)
 
     if msg.startswith('$answer'):
