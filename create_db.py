@@ -90,8 +90,8 @@ print("Connected to dbot.db.")
 # print("Created ENCOURAGEMENTS TABLE.")
 
 # create table QUESTIONS
-# @ question - content
-# @ author - full discord identifier
+# @ question    - content
+# @ author      - full discord identifier
 # @ timestamp   - date and time of question creation. See strTimeFormat in main.py
 # @ status      - "New", "Unaccepted", "Expired", "Closed"
 # @ remindPeriod- Minutes between reminders to answer.
