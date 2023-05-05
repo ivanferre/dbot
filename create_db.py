@@ -90,19 +90,46 @@ with con:
 print("Created ENCOURAGEMENTS TABLE.")
 
 # create table QUESTIONS
-print("Creating...")
+# @ question - content
+# @ author - full discord identifier
+# @ timestamp   - date and time of question creation. See strTimeFormat in main.py
+# @ status      - "New", "Unaccepted", "Expired", "Closed"
+# @ remindPeriod- Minutes between reminders to answer.
+# @ deadline    - date and time for question expiration. Same format as timestamp.
+print("Creating QUESTIONS...")
 with con:
     con.execute("""
 CREATE TABLE QUESTIONS (
     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     question TEXT,
     author TEXT,
+    name TEXT,
+    timestamp TEXT,
+    status TEXT,
+    remindPeriod INTEGER,
+    deadline TEXT
+);
+""")
+
+# create table ANSWERS
+# @ question - id of the answered question.
+# @ answer      - content of the answer.
+# @ author      - full discord identifier
+# @ name        - real name of the user.
+# @ timestamp   - date and time of answer creation. See strTimeFormat in main.py
+# @ status      - "New", "Unaccepted", "Accepted"
+print("Creating ANSWERS...")
+with con:
+    con.execute("""
+CREATE TABLE ANSWERS (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    question id,
+    answer TEXT,
+    author TEXT,
+    name TEXT,
     timestamp TEXT,
     status TEXT
 );
 """)
-
-# todo ---> Add column name (of the author) to questions.
-# todo ---> create table answers
 
 print("Done")
