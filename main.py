@@ -54,7 +54,7 @@ ongoingStopUser = ''
 # time format
 # https://www.programiz.com/python-programming/datetime/current-datetime
 # https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
-strTimeFormat = '%d.%m.%y at %H:%M:%S'
+strTimeFormat = '%d.%m.%y %H:%M:%S'
 
 # Initialization
 
@@ -150,7 +150,7 @@ async def on_message(message):
         # send the question to the resources channel (include id and say to use it)
         #
         # periodically remind people about the question?
-        # (timetocheck, duetime)
+        # (remindPeriod, deadline)
 
     if msg.startswith('$answer'):
         # !DEBUG
