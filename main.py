@@ -138,6 +138,7 @@ async def on_message(message):
 
         # TODO
     if msg.startswith('$question'):
+        # doQuestion (msg)
         now = datetime.now()
         content = msg.replace("$question ", "")
         idQuestion = insertQuestion(

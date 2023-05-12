@@ -66,6 +66,8 @@ Therefore, we need to get the instance name in the discord chat to be able to st
 ## sqlite3 database
 
 CLI to SQLite3
+<https://www.sqlite.org/cli.html>
+
 <https://manpages.ubuntu.com/manpages/jammy/en/man1/sqlite3.1.html>
 
 Use `.schema tablename` to see the description of a table.
