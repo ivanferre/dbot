@@ -35,7 +35,10 @@ Once you're done, you may **deactivate the environment**.
       ~/.ssh/known_hosts:10: [hashed name]
   Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 
-1. $stop command to stop [stop the instance].
+1. Stop the bot. $stop command.
+  It must close the database connection to make sure all data is recorded on disk.
+
+1. DO NOT IMPLEMENT $stop command to stop [stop the instance].
   <https://aws.plainenglish.io/the-fear-of-boto3-how-to-stop-ec2-instances-using-python-f0339a8ec986>
 
 Command is:

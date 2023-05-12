@@ -21,7 +21,7 @@ print("Connected to dbot.db.")
 # with con:
 #     con.execute("""
 # CREATE TABLE SAD_EXPRESSIONS (
-#     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+#     id INTEGER PRIMARY KEY,
 #     expression TEXT
 # );
 # """)
@@ -58,7 +58,7 @@ print("Connected to dbot.db.")
 # with con:
 #     con.execute("""
 # CREATE TABLE ENCOURAGEMENTS (
-#     id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+#     id INTEGER PRIMARY KEY,
 #     expression TEXT
 # );
 # """)
@@ -100,7 +100,7 @@ print("Creating QUESTIONS...")
 with con:
     con.execute("""
 CREATE TABLE QUESTIONS (
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY,
     question TEXT,
     author TEXT,
     name TEXT,
@@ -122,7 +122,7 @@ print("Creating ANSWERS...")
 with con:
     con.execute("""
 CREATE TABLE ANSWERS (
-    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY,
     question id,
     answer TEXT,
     author TEXT,
