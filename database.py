@@ -66,6 +66,7 @@ def insertQuestion(connection, author, name, content, timestamp):
         with connection:
             id = connection.execute(sql, data)
     except:
+        id = -1
         print(f'{sql} failed.')
 
     print(f'insertQuestion returns {id}')   # ! DEBUG
