@@ -61,6 +61,7 @@ def insertQuestion(connection, author, name, content, timestamp):
     data = (content, author, timestamp, "New", reminderPeriod, answersDeadline)
     id = connection.execute(sql, data)
     connection.commit()
+    print(f'insertQuestion returns {id}')   # ! DEBUG
     return id
 
     # TODO
