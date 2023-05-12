@@ -48,14 +48,23 @@ def getEncouragements(connection):
 # read stored questions
 
 # insert new question
+# AUTOINCREMENT is not recommended when creating KEYs, as explained in
+# https://www.sqlitetutorial.net/sqlite-autoincrement/
+# RETURNING is not standard SQL, but an extension, as explained in
+# https://www.sqlite.org/lang_returning.html
+# https://docs.python.org/3/library/sqlite3.html
 def insertQuestion(connection, author, name, content, timestamp):
     # ! DEBUG
     print(f'INSERT INTO QUESTIONS /{author}/{name}/{content}/{timestamp}/')
-    sql = "INSERT INTO QUESTIONS (QUESTION, AUTHOR, NAME, TIMESTAMP, STATUS, REMINDPERIOD, DEADLINE) VALUES (?, ?, ?, ?, ?, ?, ?)"
+
+    sql = "INSERT INTO QUESTIONS (QUESTION, AUTHOR, NAME, TIMESTAMP, STATUS, REMINDPERIOD, DEADLINE) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id"
     data = (content, author, timestamp, "New", reminderPeriod, answersDeadline)
-    connection.execute(sql, data)
-    # get the id automatically generated
+    id = connection.execute(sql, data)
+    connection.commit()
+    return id
+
     # TODO
+    # get the id automatically generated
     # select with the same data including timestamp
     # return ID
 
