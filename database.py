@@ -57,10 +57,17 @@ def insertQuestion(connection, author, name, content, timestamp):
     # ! DEBUG
     print(f'INSERT INTO QUESTIONS /{author}/{name}/{content}/{timestamp}/')
 
-    sql = "INSERT INTO QUESTIONS (QUESTION, AUTHOR, NAME, TIMESTAMP, STATUS, REMINDPERIOD, DEADLINE) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id"
+    sql = "INSERT INTO QUESTIONS (QUESTION, AUTHOR, NAME, TIMESTAMP, STATUS, REMINDPERIOD, DEADLINE) VALUES (?, ?, ?, ?, ?, ?) RETURNING id"
     data = (content, author, timestamp, "New", reminderPeriod, answersDeadline)
-    id = connection.execute(sql, data)
-    connection.commit()
+
+    # See about Connection Manager in
+    # https://docs.python.org/3/library/sqlite3.html
+    try:
+        with connection:
+            id = connection.execute(sql, data)
+    except:
+        print(f'{sql} failed.')
+
     print(f'insertQuestion returns {id}')   # ! DEBUG
     return id
 
