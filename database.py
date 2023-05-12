@@ -48,7 +48,7 @@ def getEncouragements(connection):
 # read stored questions
 
 # insert new question
-def insertQuestion(connection, author, name, timestamp, content):
+def insertQuestion(connection, author, name, content, timestamp):
     # ! DEBUG
     print(f'INSERT INTO QUESTIONS /{author}/{name}/{content}/{timestamp}/')
     sql = "INSERT INTO QUESTIONS (QUESTION, AUTHOR, NAME, TIMESTAMP, STATUS, REMINDPERIOD, DEADLINE) VALUES (?, ?, ?, ?, ?, ?, ?)"
