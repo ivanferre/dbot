@@ -1,4 +1,4 @@
-# read_db.py
+# database.py
 
 # acquire the sqlite library
 import sqlite3 as sl
@@ -53,29 +53,39 @@ def getEncouragements(connection):
 # RETURNING is not standard SQL, but an extension, as explained in
 # https://www.sqlite.org/lang_returning.html
 # https://docs.python.org/3/library/sqlite3.html
+# See about Connection Manager in
+# https://docs.python.org/3/library/sqlite3.html
+# @ connection  - must be open, function does not check
+# @ author      - discord username
+# @ name        - name scrapped from @author
+# @ content     - the text of the question
+# @ timestamp   - when the question message was detected by the bot
 def insertQuestion(connection, author, name, content, timestamp):
     # ! DEBUG
-    print(f'INSERT INTO QUESTIONS /{author}/{name}/{content}/{timestamp}/')
+    sqlstr = f'INSERT INTO QUESTIONS (QUESTION, AUTHOR, NAME, TIMESTAMP, STATUS, REMINDPERIOD, DEADLINE) VALUES ({content}, {author}, {name}, {timestamp}, "New", {reminderPeriod}, {answersDeadline})'
+    print(sqlstr)
 
-    sql = "INSERT INTO QUESTIONS (QUESTION, AUTHOR, NAME, TIMESTAMP, STATUS, REMINDPERIOD, DEADLINE) VALUES (?, ?, ?, ?, ?, ?) RETURNING id"
-    data = (content, author, timestamp, "New", reminderPeriod, answersDeadline)
+    data = (content, author, name, timestamp,
+            "New", reminderPeriod, str(answersDeadline))
+    sql = "INSERT INTO QUESTIONS (QUESTION, AUTHOR, NAME, TIMESTAMP, STATUS, REMINDPERIOD, DEADLINE) VALUES (?, ?, ?, ?, ?, ?, ?)"
 
-    # See about Connection Manager in
-    # https://docs.python.org/3/library/sqlite3.html
+    newid = 0
+
     try:
         with connection:
-            id = connection.execute(sql, data)
+            print("Before connection.execute()")
+            cursor = connection.execute(sql, data)
+            print("INSERT executed.")
+            newid = cursor.lastrowid
+            print(f'TRY newid = {newid}')
+
     except:
-        id = -1
-        print(f'{sql} failed.')
+        print(f'EXCEPT newid = {newid}')
+        newid = -1
+        print(f'{sqlstr} failed.')
 
-    print(f'insertQuestion returns {id}')   # ! DEBUG
-    return id
-
-    # TODO
-    # get the id automatically generated
-    # select with the same data including timestamp
-    # return ID
+    print(f'insertQuestion returns {newid}')   # ! DEBUG
+    return newid
 
 # TODO
 # update question with temptative answer
@@ -83,3 +93,9 @@ def insertQuestion(connection, author, name, content, timestamp):
 #
 # TODO
 # update question with acceptance to answer
+
+
+# ! DEBUG
+# db = openDatabase('dbot.db')
+# id = insertQuestion(db, "Ivan#1638", "Ivan", "Warum?", "17.05.23 15:54:36")
+# print("EOF database.py")

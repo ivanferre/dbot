@@ -141,16 +141,13 @@ async def on_message(message):
         # doQuestion (msg)
         now = datetime.now()
         content = msg.replace("$question ", "")
-        # ! DEBUG
-        author = message.author
-        name = message.author.name
-        timestamp = now.strftime(strTimeFormat)
-        # print(f'INSERT INTO QUESTIONS /{author}/{name}/{content}/{timestamp}/')
+        print(
+            f'insertQuestion/{message.author}/{message.author.name}/{content}/{now.strftime(strTimeFormat)}/')
 
         idQuestion = insertQuestion(
-            db, message.author, message.author.name, content, now.strftime(strTimeFormat))
+            db, str(message.author), str(message.author.name), content, now.strftime(strTimeFormat))
         # thank the author in same channel
-        await message.channel.send(f'Dear {message.author.name}, thank you for your very interesting question: {idQuestion}:{content}')
+        # await message.channel.send(f'Dear {message.author.name}, thank you for your very interesting question: {idQuestion}: /{content}/')
         # TODO
         # send the question to the resources channel (include id and say to use it)
         # TODO
