@@ -10,3 +10,4 @@ __pycache__/
 *.py[cod]
 db_tests/.vscode/settings.json
 dbot.db
+dbot.db
