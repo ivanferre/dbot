@@ -142,8 +142,6 @@ async def on_message(message):
         now = datetime.now()
         content = msg.replace("$question ", "")
         questionTime = now.strftime(strTimeFormat)
-        print(
-            f'insertQuestion/{message.author}/{message.author.name}/{content}/{questionTime}/')
 
         idQuestion = insertQuestion(
             db, str(message.author), str(message.author.name), content, questionTime)
