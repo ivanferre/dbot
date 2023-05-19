@@ -141,15 +141,21 @@ async def on_message(message):
         # doQuestion (msg)
         now = datetime.now()
         content = msg.replace("$question ", "")
+        questionTime = now.strftime(strTimeFormat)
         print(
-            f'insertQuestion/{message.author}/{message.author.name}/{content}/{now.strftime(strTimeFormat)}/')
+            f'insertQuestion/{message.author}/{message.author.name}/{content}/{questionTime}/')
 
         idQuestion = insertQuestion(
-            db, str(message.author), str(message.author.name), content, now.strftime(strTimeFormat))
+            db, str(message.author), str(message.author.name), content, questionTime)
+
         # thank the author in same channel
-        # await message.channel.send(f'Dear {message.author.name}, thank you for your very interesting question: {idQuestion}: /{content}/')
+        await message.channel.send(f'Dear {message.author.name}, thank you for your very interesting question ({idQuestion})')
         # TODO
         # send the question to the resources channel (include id and say to use it)
+        resourcesChannel = client.get_channel("resources")
+        requestAnswer = f'{message.author.name} has asked at {questionTime}: {content} ({idQuestion})'
+        # await resourcesChannel.send(resourcesChannel)
+
         # TODO
         # periodically remind people about the question
         # (remindPeriod, deadline)

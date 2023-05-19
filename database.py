@@ -61,9 +61,6 @@ def getEncouragements(connection):
 # @ content     - the text of the question
 # @ timestamp   - when the question message was detected by the bot
 def insertQuestion(connection, author, name, content, timestamp):
-    # ! DEBUG
-    sqlstr = f'INSERT INTO QUESTIONS (QUESTION, AUTHOR, NAME, TIMESTAMP, STATUS, REMINDPERIOD, DEADLINE) VALUES ({content}, {author}, {name}, {timestamp}, "New", {reminderPeriod}, {answersDeadline})'
-    print(sqlstr)
 
     data = (content, author, name, timestamp,
             "New", reminderPeriod, str(answersDeadline))
@@ -73,18 +70,12 @@ def insertQuestion(connection, author, name, content, timestamp):
 
     try:
         with connection:
-            print("Before connection.execute()")
             cursor = connection.execute(sql, data)
-            print("INSERT executed.")
             newid = cursor.lastrowid
-            print(f'TRY newid = {newid}')
 
     except:
-        print(f'EXCEPT newid = {newid}')
         newid = -1
-        print(f'{sqlstr} failed.')
 
-    print(f'insertQuestion returns {newid}')   # ! DEBUG
     return newid
 
 # TODO
@@ -95,7 +86,7 @@ def insertQuestion(connection, author, name, content, timestamp):
 # update question with acceptance to answer
 
 
-# ! DEBUG
+# DEBUG
 # db = openDatabase('dbot.db')
 # id = insertQuestion(db, "Ivan#1638", "Ivan", "Warum?", "17.05.23 15:54:36")
 # print("EOF database.py")
