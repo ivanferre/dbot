@@ -71,13 +71,20 @@ Therefore, we need to get the instance name in the discord chat to be able to st
 CLI to SQLite3
 <https://www.sqlite.org/cli.html>
 
+<https://docs.python.org/3/library/sqlite3.html>
+<https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection>
+<https://docs.python.org/3/library/sqlite3.html#sqlite3-connection-context-manager>
+<https://docs.python.org/3/library/sqlite3.html#sqlite3-placeholders>
+
+<https://www.sqlite.org/lang_returning.html>
+<https://dzone.com/articles/use-returning-clause-to-avoid-unnecessary-sql-stat>
+
 <https://manpages.ubuntu.com/manpages/jammy/en/man1/sqlite3.1.html>
 
 Use `.schema tablename` to see the description of a table.
 <https://www.sqlitetutorial.net/sqlite-describe-table/>
 
 Use `.help` and `.quit` for obvious commands.
-
 Use `select * from tablename;` and other SQL commands, when needed.
 
 Dates are stored as text, and may be retrieved in different ways.
@@ -145,7 +152,8 @@ These are resources to add further features to the original project:
 - [Python List](https://www.programiz.com/python-programming/list)
 - <https://docs.python.org/3/tutorial/venv.html>
 - <https://stackoverflow.com/questions/2349991/how-do-i-import-other-python-files>
-<https://stackoverflow.com/questions/20309456/how-do-i-call-a-function-from-another-py-file>
+- <https://stackoverflow.com/questions/20309456/how-do-i-call-a-function-from-another-py-file>
+- <https://docs.python.org/3/tutorial/errors.html>
 
 ### On Development Tools
 
