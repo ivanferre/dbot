@@ -35,6 +35,9 @@ Once you're done, you may **deactivate the environment**.
       ~/.ssh/known_hosts:10: [hashed name]
   Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 
+1. Include some sort of dictionary to demonstrate the data structure.
+  Article by Mustafa: <https://www.kaggle.com/code/mustafagerme/06-dictionaries-in-python>
+
 1. Stop the bot. $stop command.
   It must close the database connection to make sure all data is recorded on disk.
 
@@ -65,6 +68,9 @@ Therefore, we need to get the instance name in the discord chat to be able to st
 ## Discord API
 
 <https://discordpy.readthedocs.io/en/stable/api.html#discord.Member>
+<https://discordpy.readthedocs.io/en/stable/search.html?q=channel>
+<https://discordpy.readthedocs.io/en/stable/api.html?highlight=channel#discord.Client.get_channel>
+<https://discordpy.readthedocs.io/en/stable/api.html?highlight=channel#discord.Client.get_all_channels>
 
 ## sqlite3 database
 
