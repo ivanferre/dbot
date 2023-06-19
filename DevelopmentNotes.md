@@ -8,6 +8,7 @@ Once you're done, you may **deactivate the environment**.
 
 ## TODO
 
+1. Dockerize the project.
 1. $question - record somebody asked something.
     1. Set reminder (May anybody answer {question.user}, please?)
     1. Store $question in database.
