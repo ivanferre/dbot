@@ -1,14 +1,9 @@
 *.env
 bot-token.env
 *.pem
-requirements.txt
 *.old
 *.db
-dbot.db
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 db_tests/.vscode/settings.json
-dbot.db
-dbot.db
-*.db
