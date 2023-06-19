@@ -2,6 +2,7 @@
 bot-token.env
 *.pem
 *.old
+OLD/*
 *.db
 # Byte-compiled / optimized / DLL files
 __pycache__/
