@@ -99,6 +99,25 @@ Dates are stored as text, and may be retrieved in different ways.
 
 Use sqlite3 from Python: <https://towardsdatascience.com/do-you-know-python-has-a-built-in-database-d553989c87bd>
 
+## The Python Requirements File and How to Create it
+
+Read <https://learnpython.com/blog/python-requirements-file/> but go first to the sections **How to Create Python Requirements File After Development** and **Best Practices for Using a Python Requirements File**.
+
+Create the `requirements.txt` file from the `import`s of the `.py` files:
+
+    ~/.local/bin/pipreqs --force .
+
+    # check for missing dependencies in your python installation (not only in your project)
+    python3 -m pip check
+
+    # make sure all python modules are updated.
+    # this is not an optimal solution. see https://stackoverflow.com/questions/2720014/how-to-upgrade-all-python-packages-with-pip
+    pip list --outdated | awk 'NR > 2 { print $1 }' | xargs -n1 pip install -U
+
+It is also possible to upgrade everything with `pip install -U -r requirements.txt`.
+
+Drop the first lines of a text file: <https://unix.stackexchange.com/questions/37790/how-do-i-delete-the-first-n-lines-of-an-ascii-file-using-shell-commands>
+
 ## Deploy in AWS
 
 Following this procedure:<https://victormerino.medium.com/running-a-python-script-24-7-in-cloud-for-free-amazon-web-services-ec2-76af166ae4fb>
