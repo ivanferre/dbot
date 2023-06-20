@@ -118,6 +118,8 @@ It is also possible to upgrade everything with `pip install -U -r requirements.t
 
 Drop the first lines of a text file: <https://unix.stackexchange.com/questions/37790/how-do-i-delete-the-first-n-lines-of-an-ascii-file-using-shell-commands>
 
+[Python: Docker image build -- install required packages via requirements.txt vs editable install](https://dev.to/behainguyen/python-docker-image-build-install-required-packages-via-requirementstxt-vs-editable-install-572j)
+
 ## Deploy in AWS
 
 Following this procedure:<https://victormerino.medium.com/running-a-python-script-24-7-in-cloud-for-free-amazon-web-services-ec2-76af166ae4fb>
