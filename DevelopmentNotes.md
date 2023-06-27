@@ -101,7 +101,12 @@ Use sqlite3 from Python: <https://towardsdatascience.com/do-you-know-python-has-
 
 ## The Python Requirements File and How to Create it
 
-Read <https://learnpython.com/blog/python-requirements-file/> but go first to the sections **How to Create Python Requirements File After Development** and **Best Practices for Using a Python Requirements File**.
+List of articles on the topic: <https://learnpython.com/blog/python-requirements-file/>
+
+Head first to:
+
+- **How to Create Python Requirements File After Development**
+- **Best Practices for Using a Python Requirements File**.
 
 Create the `requirements.txt` file from the `import`s of the `.py` files:
 
