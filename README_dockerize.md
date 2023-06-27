@@ -22,3 +22,11 @@ New problem:
 
 New spec for Python in Dockerfile: `FROM python:3`
 It works!
+
+Quotes:
+
+> Stop wasting time defending your problems and work on addressing them instead. -Celestine Chua
+
+> There is little success where there is little laughter. -Andrew Carnegie
+
+Right now, the discord bot is running in a Docker container in a AWS EC2 instance.
